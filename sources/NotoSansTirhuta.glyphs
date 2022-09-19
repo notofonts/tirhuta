@@ -1,5 +1,5 @@
 {
-.appVersion = "1357";
+.appVersion = "3109";
 classes = (
 {
 code = "uMatra_tirh uuMatra_tirh rVocalicMatra_tirh rrVocalicMatra_tirh lVocalicMatra_tirh llVocalicMatra_tirh virama_tirh Va.sub ra.sub anudatta_deva";
@@ -395,6 +395,10 @@ value = (
 );
 },
 {
+name = "Use Typo Metrics";
+value = 1;
+},
+{
 name = description;
 value = "Designed by Monotype design team.";
 },
@@ -417,10 +421,6 @@ value = "Noto is a trademark of Google Inc.";
 {
 name = versionString;
 value = "Version 2.003";
-},
-{
-name = "Use Typo Metrics";
-value = 1;
 }
 );
 date = "2021-12-16 18:47:17 +0000";
@@ -595,14 +595,6 @@ code = "lookup SingleSubstitution40 {\012    lookupflag MarkAttachmentType @mark
 name = SingleSubstitution40;
 },
 {
-code = "lookup SingleSubstitution41 {\012    lookupflag 0;\012    ;\012    # Original source: 40 \012    sub rVocalic_tirh by letterVocR.alt;\012    sub rrVocalic_tirh by letterVocRR.alt;\012    sub ra_tirh by Ra.alt1;\012    sub Ru by Ru.alt1;\012    sub Ruu by Ruu.alt1;\012} SingleSubstitution41;\012";
-name = SingleSubstitution41;
-},
-{
-code = "lookup SingleSubstitution42 {\012    lookupflag 0;\012    ;\012    # Original source: 41 \012    sub ra_tirh by Ra.alt2;\012    sub Ru by Ru.alt2;\012    sub Ruu by Ruu.alt2;\012} SingleSubstitution42;\012";
-name = SingleSubstitution42;
-},
-{
 code = "lookup SingleSubstitution44 {\012    lookupflag MarkAttachmentType @markAttachmentSet35;\012    ;\012    # Original source: 43 \012    sub nukta_tirh by nukta.alt;\012} SingleSubstitution44;\012";
 name = SingleSubstitution44;
 },
@@ -743,14 +735,17 @@ name = rphf;
 {
 code = "    lookup SingleSubstitution40;\012";
 name = ss01;
+notes = "Name: Alternate ta-virama";
 },
 {
-code = "    lookup SingleSubstitution41;\012";
+code = "lookup SingleSubstitution41 {\012    lookupflag 0;\012    ;\012    # Original source: 40 \012    sub rVocalic_tirh by letterVocR.alt;\012    sub rrVocalic_tirh by letterVocRR.alt;\012    sub ra_tirh by Ra.alt1;\012    sub Ru by Ru.alt1;\012    sub Ruu by Ruu.alt1;\012} SingleSubstitution41;\012";
 name = ss02;
+notes = "Name: Alternates for ra/vocalic r";
 },
 {
-code = "    lookup SingleSubstitution42;\012";
+code = "lookup SingleSubstitution42 {\012    sub ra_tirh by Ra.alt2;\012    sub Ru by Ru.alt2;\012    sub Ruu by Ruu.alt2;\012} SingleSubstitution42;\012";
 name = ss03;
+notes = "Name: Secondary alternate forms for ra";
 },
 {
 code = "    lookup ChainedContextualGPOS2;\012\012    lookup ChainedContextualGPOS3;\012\012    lookup ContextualGPOS33;\012\012    lookup ChainedContextualGPOS50;\012";
